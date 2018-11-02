@@ -1,0 +1,10 @@
+package com.ibm.developer.batchprocessor;
+
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+@ConditionalOnExpression("${keep-running:false}")
+@EnableWebMvc
+public class WebConfiguration {
+
+}

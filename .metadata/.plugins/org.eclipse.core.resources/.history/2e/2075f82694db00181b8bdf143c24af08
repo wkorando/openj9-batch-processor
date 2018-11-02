@@ -1,0 +1,5 @@
+package com.ibm.developer.batchprocessor;
+
+public class ProcessedEmployee {
+
+}

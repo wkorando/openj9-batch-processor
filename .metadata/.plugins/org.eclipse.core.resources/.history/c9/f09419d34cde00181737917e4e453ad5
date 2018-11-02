@@ -1,0 +1,33 @@
+package com.ibm.developer.batchprocessor;
+
+import java.util.List;
+
+import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.NonTransientResourceException;
+import org.springframework.batch.item.ParseException;
+import org.springframework.batch.item.UnexpectedInputException;
+import org.springframework.stereotype.Service;
+
+@Service
+public class FootballPlayRecordWriter implements ItemWriter<FootballPlayRecord>, ItemReader<FootballPlayRecord> {
+
+	private FootballPlayRecordRepo repo;
+
+	public FootballPlayRecordWriter(FootballPlayRecordRepo repo) {
+		this.repo = repo;
+	}
+
+	@Override
+	public void write(List<? extends FootballPlayRecord> items) throws Exception {
+		repo.saveAll(items);
+	}
+
+	@Override
+	public FootballPlayRecord read()
+			throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+		// TODO Auto-generated method stub
+		return repo.;
+	}
+
+}

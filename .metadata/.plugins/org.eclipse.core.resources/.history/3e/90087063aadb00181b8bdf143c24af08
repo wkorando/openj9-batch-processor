@@ -1,0 +1,18 @@
+package com.ibm.developer.batchprocessor;
+
+import org.h2.security.SHA256;
+import org.springframework.batch.item.ItemProcessor;
+
+public class FootballPlayProcessor implements ItemProcessor<FootballPlay, FootballPlayRecord> {
+
+	@Override
+	public FootballPlayRecord process(FootballPlay item) throws Exception {
+		FootballPlayRecord footballPlayRecord = new FootballPlayRecord();
+		footballPlayRecord.setChallenge(item.getIsChallenge() ==  1);
+		footballPlayRecord.setChallenger(item.getChallenger());
+		footballPlayRecord.setChallengeReversed(item.getIsChallengeReversed() == 1);
+		SHA256.getHash(footballPlayRecord.toString().getBytes(), false);
+		return null;
+	}
+
+}

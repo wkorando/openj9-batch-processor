@@ -1,0 +1,27 @@
+package com.ibm.developer.batchprocessor;
+
+import org.springframework.batch.item.ItemProcessor;
+
+public class MahomiesProcessor implements ItemProcessor<FootballPlayRecord, FootballPlayRecord>  {
+
+	@Override
+	public FootballPlayRecord process(FootballPlayRecord item) throws Exception {
+		if(item.getDescription().contains("MAHOMES")) {
+			if(item.getDescription().contains("TOUCHDOWN")) {
+				if(item.isBigPlay()) {
+					item.setMahomesFlair("😍😍😍");
+				} else {
+					item.setMahomesFlair("🙌🙌🙌");
+				}
+			} else if(item.getDescription().contains("INTERCEPTION") || item.getDescription().contains("FUMBLE")) {
+				item.setMahomesFlair("😭😭😭");
+			} else if(item.isBigPlay()) {
+				item.setMahomesFlair("🤩🤩🤩");
+			} else {
+				item.setMahomesFlair("😄😄😄");
+			}
+		}
+		return item;
+	}
+
+}

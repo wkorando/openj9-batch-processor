@@ -1,0 +1,18 @@
+package com.ibm.developer.batchprocessor;
+
+import java.text.SimpleDateFormat;
+
+import org.h2.security.SHA256;
+import org.springframework.batch.item.ItemProcessor;
+
+public class BigPlayProcessor implements ItemProcessor<FootballPlayRecord, FootballPlayRecord> {
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+	@Override
+	public FootballPlayRecord process(FootballPlayRecord item) throws Exception {
+		if(item.getYards() >= 20) {
+			System.out.println("***BIG PLAY ALERT: " + item.getDescription() + " ***")
+		}
+		return item;
+	}
+
+}

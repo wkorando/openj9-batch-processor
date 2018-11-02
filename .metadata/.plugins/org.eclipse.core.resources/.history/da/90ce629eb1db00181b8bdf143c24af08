@@ -1,0 +1,9 @@
+package com.ibm.developer.batchprocessor;
+
+@Configuration
+@EnableJpaRepositories(basePackages = "com.ibm.developer.batchprocessor")
+@PropertySource("persistence-generic-entity.properties")
+@EnableTransactionManagement
+public class JpaConfig {
+    // ...
+}

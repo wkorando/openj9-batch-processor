@@ -1,0 +1,8 @@
+package com.ibm.developer.batchprocessor;
+
+public class FootballPlay {
+	private long id;
+	private String firstName;
+	private String lastName;
+	private String role;
+}

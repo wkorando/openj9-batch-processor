@@ -1,0 +1,13 @@
+package com.ibm.developer.batchprocessor;
+
+import org.springframework.batch.item.ItemProcessor;
+
+public class FootballPlayProcessor implements ItemProcessor<FootballPlay, FootballPlayRecord> {
+
+	@Override
+	public FootballPlayRecord process(FootballPlay item) throws Exception {
+		System.out.println(item.toString());
+		return null;
+	}
+
+}
