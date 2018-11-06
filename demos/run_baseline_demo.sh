@@ -1,0 +1,1 @@
+./baseline-openj9-vs-hotspot/baseline_demo.sh

@@ -3,10 +3,14 @@ package com.ibm.developer.batchprocessor;
 import java.text.SimpleDateFormat;
 
 import org.h2.security.SHA256;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
 public class FootballPlayProcessor implements ItemProcessor<FootballPlay, FootballPlayRecord> {
-	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+	private static final Logger LOGGER = LoggerFactory.getLogger(BigPlayProcessor.class);
+	private static final SimpleDateFormat DF = new SimpleDateFormat("yyyy-MM-dd");
+	
 	@Override
 	public FootballPlayRecord process(FootballPlay item) throws Exception {
 		FootballPlayRecord footballPlayRecord = new FootballPlayRecord();
@@ -17,7 +21,7 @@ public class FootballPlayProcessor implements ItemProcessor<FootballPlay, Footba
 		footballPlayRecord.setDescription(item.getDescription());
 		footballPlayRecord.setFormation(item.getFormation());
 		footballPlayRecord.setFumble(item.getIsFumble() == 0);
-		footballPlayRecord.setGameDate(df.parse(item.getGameDate()));
+		footballPlayRecord.setGameDate(DF.parse(item.getGameDate()));
 		footballPlayRecord.setGameId(item.getGameId());
 		footballPlayRecord.setIncomplete(item.getIsIncomplete() == 1);
 		footballPlayRecord.setIntercerption(item.getIsIntercerption() == 1);
@@ -50,7 +54,7 @@ public class FootballPlayProcessor implements ItemProcessor<FootballPlay, Footba
 		footballPlayRecord.setYards(item.getYards());
 		byte[] hash = SHA256.getHash(footballPlayRecord.toString().getBytes(), false);
 		footballPlayRecord.setRecordHash(hash);
-		System.out.println("Record hashed and transformed: " + footballPlayRecord.toString());
+		LOGGER.info("Record hashed and transformed: " + footballPlayRecord.toString());
 		return footballPlayRecord;
 	}
 

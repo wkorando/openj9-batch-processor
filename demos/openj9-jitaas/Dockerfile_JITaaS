@@ -1,0 +1,66 @@
+# Copyright (c) 2018, 2018 IBM Corp. and others
+#
+# This program and the accompanying materials are made available under
+# the terms of the Eclipse Public License 2.0 which accompanies this
+# distribution and is available at https://www.eclipse.org/legal/epl-2.0/
+# or the Apache License, Version 2.0 which accompanies this distribution and
+# is available at https://www.apache.org/licenses/LICENSE-2.0.
+#
+# This Source Code may also be made available under the following
+# Secondary Licenses when the conditions for such availability set
+# forth in the Eclipse Public License, v. 2.0 are satisfied: GNU
+# General Public License, version 2 with the GNU Classpath
+# Exception [1] and GNU General Public License, version 2 with the
+# OpenJDK Assembly Exception [2].
+#
+# [1] https://www.gnu.org/software/classpath/license.html
+# [2] http://openjdk.java.net/legal/assembly-exception.html
+#
+# SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+#
+
+FROM ubuntu:16.04
+
+RUN apt-get update \
+  && apt-get install -qq -y --no-install-recommends \
+   libssl1.0.0 
+
+COPY grpc/roots.pem /usr/local/share/grpc/roots.pem
+COPY grpc/*so.6.0.0 grpc/*so.15.0.0 grpc/*so.1.10.1 /usr/local/lib/
+RUN    ln -sf libgpr.so.6.0.0 /usr/local/lib/libgpr.so.6 \
+    && ln -sf libgpr.so.6.0.0 /usr/local/lib/libgpr.so \
+    && ln -sf libgrpc.so.6.0.0 /usr/local/lib/libgrpc.so.6 \
+    && ln -sf libgrpc.so.6.0.0 /usr/local/lib/libgrpc.so \
+    && ln -sf libgrpc_cronet.so.6.0.0 /usr/local/lib/libgrpc_cronet.so.6 \
+    && ln -sf libgrpc_cronet.so.6.0.0 /usr/local/lib/libgrpc_cronet.so \
+    && ln -sf libgrpc_unsecure.so.6.0.0 /usr/local/lib/libgrpc_unsecure.so.6 \
+    && ln -sf libgrpc_unsecure.so.6.0.0 /usr/local/lib/libgrpc_unsecure.so \
+    && ln -sf libprotobuf-lite.so.15.0.0 /usr/local/lib/libprotobuf-lite.so.15 \
+    && ln -sf libprotobuf-lite.so.15.0.0 /usr/local/lib/libprotobuf-lite.so \
+    && ln -sf libprotobuf.so.15.0.0 /usr/local/lib/libprotobuf.so.15 \
+    && ln -sf libprotobuf.so.15.0.0 /usr/local/lib/libprotobuf.so \
+    && ln -sf libprotoc.so.15.0.0 /usr/local/lib/libprotoc.so.15 \
+    && ln -sf libprotoc.so.15.0.0 /usr/local/lib/libprotoc.so \
+    && ln -sf libgrpc++.so.1.10.1 /usr/local/lib/libgrpc++.so.6 \
+    && ln -sf libgrpc++.so.1.10.1 /usr/local/lib/libgrpc++.so \
+    && ln -sf libgrpc++.so.1.10.1 /usr/local/lib/libgrpc++.so.1 \
+    && ln -sf libgrpc++_cronet.so.1.10.1 /usr/local/lib/libgrpc++_cronet.so.6 \
+    && ln -sf libgrpc++_cronet.so.1.10.1 /usr/local/lib/libgrpc++_cronet.so \
+    && ln -sf libgrpc++_cronet.so.1.10.1 /usr/local/lib/libgrpc++_cronet.so.1 \
+    && ln -sf libgrpc++_error_details.so.1.10.1 /usr/local/lib/libgrpc++_error_details.so.6 \
+    && ln -sf libgrpc++_error_details.so.1.10.1 /usr/local/lib/libgrpc++_error_details.so \
+    && ln -sf libgrpc++_error_details.so.1.10.1 /usr/local/lib/libgrpc++_error_details.so.1 \
+    && ln -sf libgrpc++_reflection.so.1.10.1 /usr/local/lib/libgrpc++_reflection.so.6 \
+    && ln -sf libgrpc++_reflection.so.1.10.1 /usr/local/lib/libgrpc++_reflection.so \
+    && ln -sf libgrpc++_reflection.so.1.10.1 /usr/local/lib/libgrpc++_reflection.so.1 \
+    && ln -sf libgrpc++_unsecure.so.1.10.1 /usr/local/lib/libgrpc++_unsecure.so.6 \
+    && ln -sf libgrpc++_unsecure.so.1.10.1 /usr/local/lib/libgrpc++_unsecure.so \
+    && ln -sf libgrpc++_unsecure.so.1.10.1 /usr/local/lib/libgrpc++_unsecure.so.1
+ENV LD_LIBRARY_PATH=/usr/local/lib
+
+EXPOSE 38400
+ENV LD_LIBRARY_PATH=/usr/local/lib
+COPY j2sdk-image /opt/openjdk8-openj9
+ENV JAVA_HOME=/opt/openjdk8-openj9
+
+ENTRYPOINT ["/opt/openjdk8-openj9/jre/bin/java", "-XX:JITaaSServer", "-Xjit:verbose={compilePerformance},verbose={jitaas},vlog=/output/vlog.jitserver,disableSuffixLogs"]

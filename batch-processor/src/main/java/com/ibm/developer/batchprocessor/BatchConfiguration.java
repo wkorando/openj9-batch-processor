@@ -9,7 +9,6 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.database.JpaItemWriter;
 import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
@@ -36,14 +35,17 @@ public class BatchConfiguration {
 
 	@Autowired
 	private EntityManagerFactory emf;
-	
-	@Value("${run-type:full-run}")
+
+	/*
+	 * Either short or long, defaults to long
+	 */
+	@Value("${run-type:long}")
 	private String runType;
 
 	@Bean
 	FlatFileItemReader<FootballPlay> reader() {
 		FlatFileItemReader<FootballPlay> reader = new FlatFileItemReader<FootballPlay>();
-		reader.setResource(new ClassPathResource(runType + ".csv"));
+		reader.setResource(new ClassPathResource(runType + "-run.csv"));
 		reader.setLineMapper(new DefaultLineMapper<FootballPlay>() {
 			{
 
@@ -103,45 +105,53 @@ public class BatchConfiguration {
 		});
 		return reader;
 	}
-	
+
 	JpaPagingItemReader<FootballPlayRecord> recordReader() {
 		JpaPagingItemReader<FootballPlayRecord> reader = new JpaPagingItemReader<>();
 		reader.setQueryString("Select p FROM FootballPlayRecord p");
-	    reader.setEntityManagerFactory(emf);
-	    reader.setPageSize(10);
+		reader.setEntityManagerFactory(emf);
+		reader.setPageSize(10);
 		return reader;
-	}
-
-	@Bean
-	ItemProcessor<FootballPlay, FootballPlayRecord> processor() {
-		return new FootballPlayProcessor();
-	}
-
-	@Bean
-	public Job importFootballPlayJob(Step step1, Step step2, Step step3, Step step4) {
-		return jobBuilderFactory.get("importFootballPlayJob").incrementer(new RunIdIncrementer()).start(step1).next(step2).next(step3).next(step4).build();
-	}
-
-	@Bean
-	public Step step1() {
-		return stepBuilderFactory.get("step1").<FootballPlay, FootballPlayRecord>chunk(10).reader(reader())
-				.processor(processor()).writer(writer).build();
 	}
 	
 	@Bean
-	public Step step2() {
+	Job importFootballPlayJob(Step step1, Step step2, Step step3, Step step4) {
+		return jobBuilderFactory.get("importFootballPlayJob").incrementer(new RunIdIncrementer()).start(step1)
+				.next(step2).next(step3).next(step4).build();
+	}
+
+	/*
+	 * Pull items from CSV file, transform, hash, write to H2 DB.
+	 */
+	@Bean
+	Step step1() {
+		return stepBuilderFactory.get("step1").<FootballPlay, FootballPlayRecord>chunk(10).reader(reader())
+				.processor(new FootballPlayProcessor()).writer(writer).build();
+	}
+
+	/*
+	 * Check items if "big play", if true update record and print to console, write to database
+	 */
+	@Bean
+	Step step2() {
 		return stepBuilderFactory.get("step2").<FootballPlayRecord, FootballPlayRecord>chunk(10).reader(recordReader())
 				.processor(new BigPlayProcessor()).writer(writer).build();
 	}
-	
+
+	/*
+	 * Perform series of regexes and checks to see if play by Mahomes and the outcome of play,, update record, print message, write record to DB
+	 */
 	@Bean
-	public Step step3() {
+	Step step3() {
 		return stepBuilderFactory.get("step3").<FootballPlayRecord, FootballPlayRecord>chunk(10).reader(recordReader())
 				.processor(new MahomiesProcessor()).writer(writer).build();
 	}
-	
+
+	/*
+	 * Serialize to JSON and print message to console
+	 */
 	@Bean
-	public Step step4() {
+	Step step4() {
 		return stepBuilderFactory.get("step4").<FootballPlayRecord, FootballPlayRecord>chunk(10).reader(recordReader())
 				.processor(new JSONProcessor()).writer(writer).build();
 	}
