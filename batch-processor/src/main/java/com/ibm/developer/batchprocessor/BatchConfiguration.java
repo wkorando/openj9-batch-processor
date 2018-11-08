@@ -3,12 +3,15 @@ package com.ibm.developer.batchprocessor;
 import javax.persistence.EntityManagerFactory;
 
 import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.jsr.JobListenerAdapter;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
@@ -116,7 +119,21 @@ public class BatchConfiguration {
 	
 	@Bean
 	Job importFootballPlayJob(Step step1, Step step2, Step step3, Step step4) {
-		return jobBuilderFactory.get("importFootballPlayJob").incrementer(new RunIdIncrementer()).start(step1)
+		JobExecutionListener executionListener = new JobExecutionListener() {
+			
+			@Override
+			public void beforeJob(JobExecution jobExecution) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterJob(JobExecution jobExecution) {
+				System.out.println("running GC");
+				System.gc();
+			}
+		};
+		return jobBuilderFactory.get("importFootballPlayJob").incrementer(new RunIdIncrementer()).listener(executionListener).start(step1)
 				.next(step2).next(step3).next(step4).build();
 	}
 

@@ -1,0 +1,5 @@
+FROM adoptopenjdk/openjdk8:jdk8u172-b11
+
+COPY batch-processor/target/batch-processor-0.0.1-SNAPSHOT.jar /
+
+ENTRYPOINT ["java", "-jar", "batch-processor-0.0.1-SNAPSHOT.jar", "--run-type=medium"  ]

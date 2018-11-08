@@ -3508,3 +3508,69 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2018-11-06 09:42:55,825 [Worker-152: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-11-06 09:42:55,827 [Worker-152: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-11-06 09:42:55,827 [Worker-152: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-06 22:53:57,706 [Worker-236: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:53:57,708 [Worker-236: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-06 22:53:57,708 [Worker-236: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-06 22:53:57,711 [Worker-236: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:53:57,711 [Worker-236: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-06 22:54:05,283 [Worker-238: Launching Executing install in _Users_William.Korando_ibm.com_Documents_openJ9-workspace_batch-processor] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor
+2018-11-06 22:54:05,283 [Worker-238: Launching Executing install in _Users_William.Korando_ibm.com_Documents_openJ9-workspace_batch-processor] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2018-11-06 22:54:10,475 [Worker-239: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:54:10,478 [Worker-239: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-06 22:54:10,479 [Worker-239: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-06 22:54:10,481 [Worker-239: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-06 22:54:10,481 [Worker-239: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:03:00,127 [Worker-257: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:03:00,129 [Worker-257: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:03:00,130 [Worker-257: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:03:00,132 [Worker-257: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:03:00,132 [Worker-257: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:03:51,602 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:03:51,603 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:03:51,604 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:03:51,605 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:03:51,605 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:04:17,218 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:04:17,218 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:04:17,219 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:04:17,221 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:04:17,221 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:04:59,800 [Worker-264: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:04:59,801 [Worker-264: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:04:59,801 [Worker-264: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:04:59,803 [Worker-264: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:04:59,803 [Worker-264: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:07:37,751 [Worker-263: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:07:37,752 [Worker-263: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:07:37,752 [Worker-263: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:07:37,754 [Worker-263: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:07:37,754 [Worker-263: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:07:49,619 [Worker-265: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:07:49,620 [Worker-265: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:07:49,620 [Worker-265: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:07:49,622 [Worker-265: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:07:49,622 [Worker-265: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:07:53,346 [Worker-257: Launching Executing install in _Users_William.Korando_ibm.com_Documents_openJ9-workspace_batch-processor] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor
+2018-11-07 11:07:53,346 [Worker-257: Launching Executing install in _Users_William.Korando_ibm.com_Documents_openJ9-workspace_batch-processor] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2018-11-07 11:07:58,018 [Worker-260: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:07:58,018 [Worker-260: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:07:58,019 [Worker-260: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:07:58,021 [Worker-260: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:07:58,021 [Worker-260: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:12:29,267 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:12:29,267 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-07 11:12:29,268 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-07 11:12:29,271 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 11:12:29,271 [Worker-262: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-07 11:13:19,849 [Worker-266: Launching Executing install in _Users_William.Korando_ibm.com_Documents_openJ9-workspace_batch-processor] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor
+2018-11-07 11:13:19,850 [Worker-266: Launching Executing install in _Users_William.Korando_ibm.com_Documents_openJ9-workspace_batch-processor] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2018-11-07 21:53:42,375 [Worker-297: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 21:53:42,377 [Worker-297: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-07 21:53:42,377 [Worker-297: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-11-07 21:53:42,378 [Worker-297: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-07 21:53:42,379 [Worker-297: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources
+2018-11-08 05:17:41,399 [Worker-344: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-08 05:17:41,400 [Worker-344: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-08 05:17:41,401 [Worker-344: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2018-11-08 05:17:41,403 [Worker-344: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-08 05:17:41,403 [Worker-344: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openJ9-workspace/batch-processor/src/test/resources

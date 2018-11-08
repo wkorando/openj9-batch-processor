@@ -2,4 +2,4 @@ FROM adoptopenjdk/openjdk8-openj9:jdk8u181-b13_openj9-0.9.0
 
 COPY batch-processor/target/batch-processor-0.0.1-SNAPSHOT.jar /
 
-ENTRYPOINT ["java", "-jar", "-Xtune:virtualized", "-Xshareclasses", "-Xquickstart", "-Xscmx=50M", "-XX:+IdleTuningCompactOnIdle", "-XX:+IdleTuningGcOnIdle", "-XX:IdleTuningMinIdleWaitTime=5", "-XX:+UseContainerSupport", "batch-processor-0.0.1-SNAPSHOT.jar", "--run_type=medium" ]
+ENTRYPOINT ["java", "-jar", "-Xshareclasses", "-Xquickstart", "-Xshareclasses:cacheDir=/cache", "-XX:IdleTuningMinIdleWaitTime=5", "-XX:+UseContainerSupport", "batch-processor-0.0.1-SNAPSHOT.jar", "--run_type=short" ]

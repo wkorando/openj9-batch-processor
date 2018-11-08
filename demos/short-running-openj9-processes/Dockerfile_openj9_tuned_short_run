@@ -1,5 +1,0 @@
-FROM adoptopenjdk/openjdk8-openj9:jdk8u181-b13_openj9-0.9.0
-
-COPY batch-processor-0.0.1-SNAPSHOT.jar /
-
-ENTRYPOINT ["java", "-jar", "-Xquickstart", "-Xshareclasses", "-Xscmx=50M", "-XX:+UseContainerSupport", "batch-processor-0.0.1-SNAPSHOT.jar", "--run-type=short" ]
