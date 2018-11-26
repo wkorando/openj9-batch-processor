@@ -1,5 +1,7 @@
 FROM adoptopenjdk/openjdk8-openj9:jdk8u181-b13_openj9-0.9.0
 
-COPY batch-processor/target/batch-processor-0.0.1-SNAPSHOT.jar /
+COPY batch-processor-0.0.1-SNAPSHOT.jar /
 
-ENTRYPOINT ["java", "-jar", "-Xshareclasses", "-Xquickstart", "-Xshareclasses:cacheDir=/cache", "-XX:IdleTuningMinIdleWaitTime=5", "-XX:+UseContainerSupport", "batch-processor-0.0.1-SNAPSHOT.jar", "--run_type=short" ]
+RUN /bin/bash -c 'java -Xshareclasses -jar batch-processor-0.0.1-SNAPSHOT.jar &' ; sleep 20 ; ps aux | grep java | grep batch-processor | awk '{print $2}' | xargs kill -1
+
+ENTRYPOINT ["java", "-jar", "-Xshareclasses", "-Xquickstart", "-Xnoaot", "-XX:+UseContainerSupport", "batch-processor-0.0.1-SNAPSHOT.jar", "--run_type=short" ]
