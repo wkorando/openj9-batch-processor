@@ -4,4 +4,4 @@ COPY batch-processor/target/batch-processor-0.0.1-SNAPSHOT.jar /
 
 RUN /bin/bash -c 'java -Xshareclasses:verbose -Xscmx500M -Xquickstart -jar batch-processor-0.0.1-SNAPSHOT.jar --run_type=short &' ; sleep 15 ; ps aux | grep java | grep batch-processor | awk '{print $2}' | xargs kill -1
 
-ENTRYPOINT ["java", "-jar", "-Xshareclasses", "-Xscmx500M", "-Xquickstart", "batch-processor-0.0.1-SNAPSHOT.jar", "--run_type=short" ]
+ENTRYPOINT ["java", "-jar", "-Xshareclasses", "-Xscmx500M", "-Xdump:directory=/coredump", "-Xdump:java:events=vmstart,file=test.txt", "-Xquickstart", "batch-processor-0.0.1-SNAPSHOT.jar", "--run_type=short" ]
