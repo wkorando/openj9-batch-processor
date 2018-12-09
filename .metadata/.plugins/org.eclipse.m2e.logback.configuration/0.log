@@ -5274,3 +5274,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2018-11-26 09:40:14,523 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
 2018-11-26 09:40:14,559 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-11-26 09:40:14,560 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/William.Korando@ibm.com/Documents/openj9-batch-processor/batch-processor/src/test/resources
+2018-12-04 06:38:47,305 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

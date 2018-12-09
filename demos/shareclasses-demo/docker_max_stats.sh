@@ -1,0 +1,1 @@
+while true; do docker stats --no-stream --format "{{.Name}}, {{.CPUPerc}}, {{.MemUsage}}" >> stats.txt; done
