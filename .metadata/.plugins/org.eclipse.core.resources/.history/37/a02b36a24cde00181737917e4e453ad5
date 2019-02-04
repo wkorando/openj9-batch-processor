@@ -1,9 +1,0 @@
-package com.ibm.developer.batchprocessor;
-
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.transaction.annotation.Transactional;
-
-public interface FootballPlayRecordRepo extends PagingAndSortingRepository<FootballPlayRecord, Long> {
-
-}

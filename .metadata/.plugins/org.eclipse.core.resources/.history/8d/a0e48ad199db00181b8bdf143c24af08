@@ -1,9 +1,0 @@
-package com.ibm.developer.batchprocessor;
-
-public class ProcessedEmployee {
-	private long id;
-	private String firstName;
-	private String lastName;
-	private String role;
-	private String employeeHash;
-}

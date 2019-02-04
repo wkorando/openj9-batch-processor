@@ -1,7 +1,0 @@
-package com.ibm.developer.batchprocessor;
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface FootballPlayRecordRepo extends CrudRepository<FootballPlayRecord, Long> {
-
-}

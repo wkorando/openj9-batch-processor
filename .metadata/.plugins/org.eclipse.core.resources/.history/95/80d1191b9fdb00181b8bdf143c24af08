@@ -1,7 +1,0 @@
-package com.ibm.developer.batchprocessor;
-
-import org.springframework.batch.item.ItemProcessor;
-
-public class FootballPlayProcessor implements ItemProcessor<FotballPlay, FootballPlayRecord> {
-
-}

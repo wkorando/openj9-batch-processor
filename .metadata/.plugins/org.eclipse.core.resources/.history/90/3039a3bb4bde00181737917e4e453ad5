@@ -1,9 +1,0 @@
-package com.ibm.developer.batchprocessor;
-
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.transaction.annotation.Transactional;
-
-@Transactional
-public interface FootballPlayRecordRepo extends CrudRepository<FootballPlayRecord, Long> {
-
-}
