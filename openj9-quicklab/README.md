@@ -1,11 +1,20 @@
-Tuning Guide
+# Introducing Eclipse OpenJ9
 
-"-Xtune:virtualized", #Optimizes the VM for virtualized environments
-"-Xshareclasses", #Allows JVMs to share ROM classes
-"-Xscmx=50M", #Sets the size of the shareclasses cache to 50M
-"-XX:+IdleTuningCompactOnIdle", #Compacts the heap (like defragmenting a hard drive), makes the below step more effective
-"-XX:+IdleTuningGcOnIdle", #Releases unused heap memory back to the system
-"-XX:IdleTuningMinIdleWaitTime=5", #Wait 5 seconds once in idle to perform idle GC operations
-"-XX:+UseContainerSupport", #Tells the VM to aggressively use all available memory as applications in containers typically only thing running
-"batch-processor-0.0.1-SNAPSHOT.jar",
-"--spring.main.web-application-type=NONE" #Will keep the Java application running to demonstrate idle GC improvements 
+OpenJ9 is an open source JVM implementation backed by IBM and the Eclipse Foundation. 
+
+OpenJ9 is a free to use JVM dual licensed under the EPLv2 with CE and Apache License. 
+
+In this demo we compare OpenJ9 to the other prominent JVM implementations of Hotspot, Amazon Corretto, and GraalVM. 
+
+
+---
+
+# Running the demo
+
+In the terminal under the directory `~/Documents/openj9-batch-processor/openj9-quicklab`, execute `./run-demo.sh`
+
+Demo takes approx. 2 minutes to complete and it will take ~10 seconds before the graph starts populating. 
+
+If grafana stops working under above directory execute `docker swarm leave --force` and then `./start-grafana.sh` 
+
+If you want to make changes to the Dockerfiles, once done execute `./build-containers.sh` to rebuild and properly name the docker containers. 
