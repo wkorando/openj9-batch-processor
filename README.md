@@ -1,12 +1,12 @@
-#OpenJ9 Batch Processor
+# OpenJ9 Batch Processor
 
--
+--
 
 This project demonstrates the performance benefits of running Java applications on [Eclipse OpenJ9](https://www.eclipse.org/openj9/). 
 
 Eclipse OpenJ9 is a fully compatible opensource JVM that is free for both download **and use** from [AdoptOpenJDK](https://adoptopenjdk.net/).
 
-##About the Demo 
+## About the Demo 
 
 A [Spring Batch](https://spring.io/projects/spring-batch) application is used as a test article for comparing the JVMs to one another. At a high level the batch application performs the following actions: 
 
@@ -23,4 +23,4 @@ The source code for the application is avaliable [here](https://github.com/wkora
 
 Feedback is welcome on the design of a demo to properly compare JVMs to one another. The goal of this demo was to be able to easily compare throughput and minimize dependencies on external (to the JVM) dependencies. 
 
-##Running the Demo
+## Running the Demo
