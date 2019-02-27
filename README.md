@@ -6,6 +6,12 @@ This project demonstrates the performance benefits of running Java applications 
 
 Eclipse OpenJ9 is a fully compatible opensource JVM that is free for both download **and use** from [AdoptOpenJDK](https://adoptopenjdk.net/).
 
+## Presentation
+
+This demo is used in the presentation **OpenJ9 a Lean, Mean, Java Virtual Machine**
+
+Slides to the presentation are available here: [https://ibm.biz/Bd2umZ](https://ibm.biz/Bd2umZ)
+
 ## About the Demo 
 
 A [Spring Batch](https://spring.io/projects/spring-batch) application is used as a test article for comparing the JVMs to one another. At a high level the batch application performs the following actions: 
@@ -24,3 +30,7 @@ The source code for the application is avaliable [here](https://github.com/wkora
 Feedback is welcome on the design of a demo to properly compare JVMs to one another. The goal of this demo was to be able to easily compare throughput and minimize dependencies on external (to the JVM) dependencies. 
 
 ## Running the Demo
+
+### Disclaimer
+
+This project and presentation have ongoing improvements made to them. They might change a bit over time, but always with the intent of improving upon the content to make it more informative, helpful, easier to use, and give a more accurate representation of OpenJ9's performance relative to other available JVM implementations. 
