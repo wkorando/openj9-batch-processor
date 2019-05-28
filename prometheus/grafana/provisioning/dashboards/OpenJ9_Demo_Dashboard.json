@@ -166,7 +166,7 @@
         {
           "expr": "sort_desc(sum(container_memory_usage_bytes{image=~\"oj9d.*\"}) by (name))",
           "format": "time_series",
-          "interval": "10s",
+          "interval": "1s",
           "intervalFactor": 1,
           "legendFormat": "{{ name }}",
           "metric": "container_memory_usage:sort_desc",
