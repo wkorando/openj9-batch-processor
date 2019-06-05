@@ -1,7 +1,0 @@
-FROM adoptopenjdk/openjdk8-openj9:jdk8u181-b13_openj9-0.9.0
-
-COPY batch-processor-0.0.1-SNAPSHOT.jar /
-
-RUN /bin/bash -c 'java -Xshareclasses -Xscmx20M -jar batch-processor-0.0.1-SNAPSHOT.jar --run_type=short &' ; sleep 15 ; xargs kill -1
-
-ENTRYPOINT ["java", "-Xshareclasses", "-Xscmx300M", "-jar", "batch-processor-0.0.1-SNAPSHOT.jar" ]

@@ -1,11 +1,5 @@
-/.metadata/
-/.recommenders/
-/.DS_Store
-.metadata/*
-
-target/
+/target/
 !.mvn/wrapper/maven-wrapper.jar
-.gradle/
 
 ### STS ###
 .apt_generated
@@ -14,7 +8,7 @@ target/
 .project
 .settings
 .springBeans
-.DS_Store
+.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -23,9 +17,9 @@ target/
 *.ipr
 
 ### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

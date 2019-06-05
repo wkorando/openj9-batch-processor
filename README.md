@@ -1,6 +1,6 @@
 # OpenJ9 Batch Processor
 
---
+**NOTE:** To view the original version of this project, checkout the [v1.0.0 branch](https://github.com/wkorando/openj9-batch-processor/tree/v1.0.0)
 
 This project demonstrates the performance benefits of running Java applications on [Eclipse OpenJ9](https://www.eclipse.org/openj9/). 
 
@@ -28,8 +28,6 @@ A [Spring Batch](https://spring.io/projects/spring-batch) application is used as
 The source code for the application is avaliable [here](https://github.com/wkorando/openj9-batch-processor/tree/master/batch-processor).
 
 Feedback is welcome on the design of a demo to properly compare JVMs to one another. The goal of this demo was to be able to easily compare throughput and minimize dependencies on external (to the JVM) dependencies. 
-
-## Running the Demo
 
 ### Disclaimer
 

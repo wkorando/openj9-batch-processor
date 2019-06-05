@@ -1,5 +1,0 @@
-FROM oracle/graalvm-ce:1.0.0-rc12
-
-COPY batch-processor-0.0.1-SNAPSHOT.jar /
-
-ENTRYPOINT ["java", "-jar", "batch-processor-0.0.1-SNAPSHOT.jar", "--run-type=long"  ]
