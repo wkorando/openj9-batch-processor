@@ -1,0 +1,104 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: openj9-demo-openj9-jvm
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: openj9-demo-openj9-jvm
+  template:
+    metadata:
+      labels:
+        run: openj9-demo-openj9-jvm
+    spec:
+      containers:
+      - image: us.icr.io/openj9-demo/openj9-demo-openj9-jvm:latest
+        name: openj9-demo-openj9-jvm
+        ports:
+        - containerPort: 8080
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: openj9-demo-hotspot-jvm
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: openj9-demo-hotspot-jvm
+  template:
+    metadata:
+      labels:
+        run: openj9-demo-hotspot-jvm
+    spec:
+      containers:
+      - image: us.icr.io/openj9-demo/openj9-demo-hotspot-jvm:latest
+        name: openj9-demo-hotspot-jvm
+        ports:
+        - containerPort: 8080
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: openj9-demo-corretto-jvm
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: openj9-demo-corretto-jvm
+  template:
+    metadata:
+      labels:
+        run: openj9-demo-corretto-jvm
+    spec:
+      containers:
+      - image: us.icr.io/openj9-demo/openj9-demo-corretto-jvm:latest
+        name: openj9-demo-corretto-jvm
+        ports:
+        - containerPort: 8080
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: openj9-demo-graal-jvm
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: openj9-demo-graal-jvm
+  template:
+    metadata:
+      labels:
+        run: openj9-demo-graal-jvm
+    spec:
+      containers:
+      - image: us.icr.io/openj9-demo/openj9-demo-graal-jvm:latest
+        name: openj9-demo-graal-jvm
+        ports:
+        - containerPort: 8080
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+---
