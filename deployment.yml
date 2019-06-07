@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - image: us.icr.io/openj9-demo/openj9-demo-openj9-jvm:latest
+        imagePullPolicy: Always
         name: openj9-demo-openj9-jvm
         ports:
         - containerPort: 8080
@@ -41,6 +42,7 @@ spec:
     spec:
       containers:
       - image: us.icr.io/openj9-demo/openj9-demo-hotspot-jvm:latest
+        imagePullPolicy: Always
         name: openj9-demo-hotspot-jvm
         ports:
         - containerPort: 8080
@@ -67,6 +69,7 @@ spec:
     spec:
       containers:
       - image: us.icr.io/openj9-demo/openj9-demo-corretto-jvm:latest
+        imagePullPolicy: Always
         name: openj9-demo-corretto-jvm
         ports:
         - containerPort: 8080
@@ -93,6 +96,7 @@ spec:
     spec:
       containers:
       - image: us.icr.io/openj9-demo/openj9-demo-graal-jvm:latest
+        imagePullPolicy: Always
         name: openj9-demo-graal-jvm
         ports:
         - containerPort: 8080
