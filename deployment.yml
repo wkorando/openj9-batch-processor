@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 8080
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: Never
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
@@ -47,7 +47,7 @@ spec:
         ports:
         - containerPort: 8080
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: Never
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
@@ -74,7 +74,7 @@ spec:
         ports:
         - containerPort: 8080
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: Never
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
@@ -101,7 +101,7 @@ spec:
         ports:
         - containerPort: 8080
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: Never
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
